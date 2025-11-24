@@ -11,7 +11,7 @@ pipeline {
 
         stage('Build with Maven') {
             steps {
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
         }
 
@@ -25,7 +25,7 @@ pipeline {
 
         stage('Verify Deployment') {
             steps {
-                sh 'curl http://localhost:8081/Mavenjava'
+                bat 'curl http://localhost:8081/Mavenjava'
             }
         }
     }
