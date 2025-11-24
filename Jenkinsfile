@@ -26,8 +26,8 @@ pipeline {
 
         stage('Verify Deployment') {
             steps {
-                bat 'curl http://localhost:8081/Mavenjava/'
-            }
+                bat 'curl --fail http://localhost:8081/Mavenjava/'
         }
+}
     }
 }
