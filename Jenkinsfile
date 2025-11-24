@@ -30,7 +30,7 @@ pipeline {
         stage('Verify Deployment') {
             steps {
                 // Use absolute path to curl.exe so Jenkins finds it
-                bat '"C:\\Tools\\curl-8.17.0_4-win64-mingw\\curl-8.17.0_4-win64-mingw\\bin\\curl.exe" --fail http://localhost:8081/Mavenjava/"
+                bat '"C:\\Tools\\curl-8.17.0_4-win64-mingw\\curl-8.17.0_4-win64-mingw\\bin\\curl.exe" --fail http://localhost:8081/Mavenjava/'
             }
         }
     }
