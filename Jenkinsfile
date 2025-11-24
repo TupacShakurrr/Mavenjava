@@ -6,6 +6,7 @@ pipeline {
             steps {
                 git branch: 'main',
                     url: 'https://github.com/TupacShakurrr/Mavenjava.git'
+                    credentialsId: 'github-creds'
             }
         }
 
