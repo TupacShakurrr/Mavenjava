@@ -5,8 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/TupacShakurrr/Mavenjava.git',
-                    credentialsId: 'github-creds'
+                    url: 'https://github.com/TupacShakurrr/Mavenjava.git'
             }
         }
 
@@ -20,13 +19,14 @@ pipeline {
             steps {
                 deploy adapters: [tomcat9(credentialsId: 'tomcat-creds',
                                           url: 'http://localhost:8081')],
-                       war: 'target/Mavenjava.war'
+                       war: 'target/Mavenjava.war',
+                       contextPath: '/Mavenjava'
             }
         }
 
         stage('Verify Deployment') {
             steps {
-                bat 'curl http://localhost:8081/Mavenjava'
+                bat 'curl http://localhost:8081/Mavenjava/'
             }
         }
     }
