@@ -2,10 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Repository') {
+        stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/TupacShakurrr/Mavenjava.git'
+                    url: 'https://github.com/TupacShakurrr/Mavenjava.git',
                     credentialsId: 'github-creds'
             }
         }
